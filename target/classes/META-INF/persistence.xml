@@ -7,9 +7,9 @@
 	<class>entidades.Produto</class>
 	
 	<properties>
-		<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/estoque"/>
-		<property name="javax.persistence.jdbc.user" value="postgres"/>
-		<property name="javax.persistence.jdbc.password" value="pelean"/>
+		<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://ec2-52-44-139-108.compute-1.amazonaws.com:5432/deeg844erf52l8"/>
+		<property name="javax.persistence.jdbc.user" value="vzauntcntwhdgq"/>
+		<property name="javax.persistence.jdbc.password" value="8156e285d5fb0d16ffa9170b8d2f3320d46d01758bbc726bba51935ed0238e21"/>
 		<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
 		<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
 		<property name="hibernate.show_sql" value="true"/>
