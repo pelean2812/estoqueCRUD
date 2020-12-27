@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+	<title>Página de cadastro de produto</title>
+</h:head>
+
+<h:body style="background-color:rgb(240,240,240);">
+
+	<div style="margin-top: 50px">
+		<center>
+			<h:form id="formCadastro">
+
+				<p:panelGrid columns="2">
+
+					<f:facet name="header">
+						<p:outputLabel>Insira os dados do produto</p:outputLabel>
+					</f:facet>
+
+					<p:outputLabel value="Nome do produto" for="nome" />
+					<p:inputText id="nome" value="#{produtoBean.p.nome}"
+						required="true"
+						requiredMessage="Por favor, informe o nome do produto!"
+						title="Nome do produto" />
+
+					<p:outputLabel value="Marca do produto" for="marca" />
+					<p:inputText id="marca" value="#{produtoBean.p.marca}"
+						required="true"
+						requiredMessage="Por favor, informe a marca do produto!"
+						title="Marca do produto" />
+
+					<p:outputLabel value="Tipo do produto" for="tipo" />
+					<p:inputText id="tipo" value="#{produtoBean.p.tipo}"
+						required="true"
+						requiredMessage="Por favor, informe o tipo do produto!"
+						title="Tipo do produto" />
+
+					<p:outputLabel value="Preço do produto" for="preco" />
+					<p:inputText id="preco" value="#{produtoBean.p.preco}"
+						required="true"
+						requiredMessage="Por favor, informe o preço do produto!"
+						title="preço do produto" />
+
+					<p:outputLabel value="Quantidade do produto" for="qtd" />
+					<p:inputText id="qtd" value="#{produtoBean.p.quantidade}"
+						required="true"
+						requiredMessage="Por favor, informe a quantidade disponível no estoque do produto!"
+						title="Quantidade disponível do produto no estoque" />
+				</p:panelGrid>
+
+				<br />
+				<br />
+
+				<h:commandButton class="btn btn-outline-success" value="Cadastrar"
+					action="#{produtoBean.cadastrar}" />
+			</h:form>
+
+			<br />
+
+			<h:form>
+				<h:commandButton class="btn btn-outline-secondary"
+					value="Voltar para a tela inicial" action="index" />
+			</h:form>
+		</center>
+	</div>
+</h:body>
+</html>

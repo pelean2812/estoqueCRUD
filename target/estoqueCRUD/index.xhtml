@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+	<title>Controle de Estoque</title>
+</h:head>
+
+<h:body style="background-color:rgb(240,240,240);">
+
+	<div style="margin-top:50px">
+		<center>
+			<h:form id="formPrincipal">
+				<p:dataTable value="#{produtoBean.mostrarProdutos()}" var="produto" style = "width: 90%; text-align: center;">
+					<p:column headerText="Nome">
+						<h:outputText value="#{produto.nome}" />
+					</p:column>
+
+					<p:column headerText="Marca">
+						<h:outputText value="#{produto.marca}" />
+					</p:column>
+
+					<p:column headerText="Tipo">
+						<h:outputText value="#{produto.tipo}" />
+					</p:column>
+
+					<p:column headerText="Quantidade disponível">
+						<h:outputText value="#{produto.quantidade}" />
+					</p:column>
+
+					<p:column headerText="Preço">
+						<h:outputText value="#{produto.preco}" />
+					</p:column>
+
+					<p:column headerText="Editar produto">
+							<h:commandButton class="btn btn-outline-warning"
+								action="#{produtoBean.editar(produto.id)}" value="editar" />
+					</p:column>
+
+					<p:column headerText="Remover produto">
+							<h:commandButton class="btn btn-outline-danger"
+								action="#{produtoBean.remover(produto.id)}" value="remover" />
+					</p:column>
+				</p:dataTable>
+				<br />
+				<br />
+
+				<h:commandButton class="btn btn-outline-primary"
+					value="Cadastrar novo produto" action="telaCad" />
+
+			</h:form>
+
+		</center>
+	</div>
+
+
+</h:body>
+</html>
