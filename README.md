@@ -1,20 +1,24 @@
-#CRUD feito com JSF, JPA, Hibernate e PostgreSQL
+##CRUD feito com JSF, JPA, Hibernate e PostgreSQL
 
-#O que é o estoqueCRUD?
+##O que é o estoqueCRUD?
  O estoqueCRUD é uma aplicação web na qual o usuário pode controlar o estoque de uma loja cadastrando novos produtos, visualizando os produtos que foram cadastrados, removendo alguns produtos e alterando os dados de alguns produtos. Por esse motivo, o estoqueCRUD é uma aplicação web do tipo CRUD: o usuário pode criar dados (CREATE), pode visualizá-los
 (READ), pode atualizá-los (UPDATE) e pode removê-los (DELETE).
  
-#Itens cumpridos
+##Itens cumpridos
 -A: A aplicação web foi construida utilizando JavaServer Faces (JSF)
+
 -B: Os dados são armazenado no banco de dados PostgreSQL
+
 -C: Foi utilizado Hibernate e Java Persistence API (JPA)
+
 -F: Alguns botões foram estilizados com o Bootstrap 4
+
 -G: A tabela inicial, os formulários de cadastro e atualização de produtos, mensagens de alerta e outros foram estilizados com o Primefaces
 
-#Como utilizar o projeto em seu computador
+##Como utilizar o projeto em seu computador
  Para rodar o estoqueCRUD, é necessário ter o Eclipse IDE e Tomcat v8.5 instalado em sua máquina. Após isso, baixe o projeto, extraia a pasta do projeto, adicione o projeto no eclipse, e coloque-o para ser executado no Tomcat, após um tempo, a aplicação irá funcionar normalmente.
  
-#O Problema de lentidão para executar o projeto e como resolvê-lo
+##O Problema de lentidão para executar o projeto e como resolvê-lo
  Para rodar o estoqueCRUD não é necessário instalar o PostgreSQL no seu computador, pois o banco de dados do estoqueCRUD está hospedado no HEROKU. Então, como o HEROKU é uma plataforma gratuita, o PostgreSQL que está rodando no HEROKU é lento, e consequentemente a aplicação demora um pouco para carregar. 
  Então, caso você queira utilizar o estoqueCRUD com um banco de dados local, instale o PostgreSQL em sua máquina, crie um banco de dados qualquer, e abra o aquivo persistence.xml localizado em /src/main/java/META-INF/ e faça o seguinte:
 
