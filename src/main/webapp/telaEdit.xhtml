@@ -31,24 +31,38 @@
 					</f:facet>
 
 					<p:outputLabel value="Nome do produto" for="nome" />
-					<p:inputText value="#{produto.nome}" id="nome" required="true"
-						requiredMessage="Por favor, digite o nome do produto" />
+					<p:inputText id="nome" value="#{produto.nome}"
+						required="true"
+						requiredMessage="Por favor, informe o nome do produto!"
+						title="Nome do produto" />
 
 					<p:outputLabel value="Marca do produto" for="marca" />
-					<p:inputText value="#{produto.marca}" id="marca" required="true"
-						requiredMessage="Por favor, digite a marca do produto" />
+					<p:inputText id="marca" value="#{produto.marca}"
+						required="true"
+						requiredMessage="Por favor, informe a marca do produto!"
+						title="Marca do produto" />
 
 					<p:outputLabel value="Tipo do produto" for="tipo" />
-					<p:inputText value="#{produto.tipo}" id="tipo" required="true"
-						requiredMessage="Por favor, digite o tipo do produto" />
+					<p:inputText id="tipo" value="#{produto.tipo}"
+						required="true"
+						requiredMessage="Por favor, informe o tipo do produto!"
+						title="Tipo do produto" />
 
 					<p:outputLabel value="Preço do produto" for="preco" />
-					<p:inputText value="#{produto.preco}" id="preco" required="true"
-						requiredMessage="Por favor, digite o preço do produto" />
+					<p:inputText id="preco" value="#{produto.preco}"
+						required="true"
+						requiredMessage="Por favor, informe o preço do produto!"
+						title="preço do produto">
+						<f:validateDoubleRange minimum="0" />
+					</p:inputText>
 
 					<p:outputLabel value="Quantidade do produto" for="qtd" />
-					<p:inputText value="#{produto.quantidade}" id="qtd" required="true"
-						requiredMessage="Por favor, digite a quantidade disponível do produto no estoque" />
+					<p:inputText id="qtd" value="#{produto.quantidade}"
+						required="true"
+						requiredMessage="Por favor, informe a quantidade do produto disponível no estoque!"
+						title="Quantidade disponível do produto no estoque">
+						<f:validateLongRange minimum="0" />
+					</p:inputText>
 				</p:panelGrid>
 
 				<br />
@@ -64,6 +78,13 @@
 				<h:commandButton class="btn btn-outline-secondary"
 					value="Voltar para a tela inicial" action="index" />
 			</h:form>
+			
+			<center>
+				<p:messages style="margin-top:30px; margin-bottom:20px; width: 80%;"
+					id="messages" showDetail="true" closable="true">
+					<p:autoUpdate />
+				</p:messages>
+			</center>
 		</center>
 	</div>
 </h:body>

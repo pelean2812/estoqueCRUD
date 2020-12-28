@@ -52,13 +52,17 @@
 					<p:inputText id="preco" value="#{produtoBean.p.preco}"
 						required="true"
 						requiredMessage="Por favor, informe o preço do produto!"
-						title="preço do produto" />
+						title="preço do produto">
+						<f:validateDoubleRange minimum="0" />
+					</p:inputText>
 
 					<p:outputLabel value="Quantidade do produto" for="qtd" />
 					<p:inputText id="qtd" value="#{produtoBean.p.quantidade}"
 						required="true"
-						requiredMessage="Por favor, informe a quantidade disponível no estoque do produto!"
-						title="Quantidade disponível do produto no estoque" />
+						requiredMessage="Por favor, informe a quantidade do produto disponível no estoque!"
+						title="Quantidade disponível do produto no estoque">
+						<f:validateLongRange minimum="0" />
+					</p:inputText>
 				</p:panelGrid>
 
 				<br />
@@ -74,6 +78,14 @@
 				<h:commandButton class="btn btn-outline-secondary"
 					value="Voltar para a tela inicial" action="index" />
 			</h:form>
+
+			<center>
+				<p:messages style="margin-top:30px; margin-bottom:20px; width: 80%;"
+					id="messages" showDetail="true" closable="true">
+					<p:autoUpdate />
+				</p:messages>
+			</center>
+
 		</center>
 	</div>
 </h:body>

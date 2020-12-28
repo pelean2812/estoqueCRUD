@@ -7,20 +7,20 @@ import javax.persistence.EntityManager;
 import entidades.Produto;
 import jpaUtil.JPAUtil;
 
-public class DaoGenerico<E> {
+public class ProdutoDAO {
 	
 	private EntityManager em = JPAUtil.getEntityManager();
 	
-	public void cadastrarDao(E entidade) {
+	public void cadastrarDao(Produto p) {
 		em.getTransaction().begin();	
-		em.persist(entidade);
+		em.persist(p);
 		em.getTransaction().commit();
 		em.close();
 	}
 	
-	public List<E> retornaProdutosDao(E entidade){
+	public List<Produto> retornaProdutosDao(){
 		em.getTransaction().begin();
-		List<E> retorno = em.createQuery("from "+ entidade.getClass().getName()).getResultList();
+		List<Produto> retorno = em.createQuery("from Produto").getResultList();
 		em.getTransaction().commit();
 		
 		return retorno;
@@ -32,9 +32,9 @@ public class DaoGenerico<E> {
 		return prod;
 	}
 	
-	public void editarDao(E entidade) {
+	public void editarDao(Produto p) {
 		em.getTransaction().begin();
-		em.merge(entidade);
+		em.merge(p);
 		em.getTransaction().commit();
 	}
 	

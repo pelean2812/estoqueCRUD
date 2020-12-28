@@ -22,10 +22,20 @@
 
 <h:body style="background-color:rgb(240,240,240);">
 
-	<div style="margin-top:50px">
+	<center>
+		<h1 style="margin-top:10px; margin-bottom:20px;" >Estoque CRUD v1.0</h1>
+	
+		<p:messages style="margin-top:30px; margin-bottom:20px; width: 90%;"
+			id="messages" showDetail="true" closable="true">
+			<p:autoUpdate />
+		</p:messages>
+	</center>
+	
+	<div style="margin-top: 50px">
 		<center>
 			<h:form id="formPrincipal">
-				<p:dataTable value="#{produtoBean.mostrarProdutos()}" var="produto" style = "width: 90%; text-align: center;">
+				<p:dataTable value="#{produtoBean.mostrarProdutos()}" var="produto"
+					style="width: 90%; text-align: center;">
 					<p:column headerText="Nome">
 						<h:outputText value="#{produto.nome}" />
 					</p:column>
@@ -47,21 +57,22 @@
 					</p:column>
 
 					<p:column headerText="Editar produto">
-							<h:commandButton class="btn btn-outline-warning"
-								action="#{produtoBean.editar(produto.id)}" value="editar" />
+						<h:commandButton class="btn btn-outline-warning"
+							action="#{produtoBean.editar(produto.id)}" value="editar" />
 					</p:column>
 
 					<p:column headerText="Remover produto">
-							<h:commandButton class="btn btn-outline-danger"
-								action="#{produtoBean.remover(produto.id)}" value="remover" />
+						<h:commandButton class="btn btn-outline-danger"
+							action="#{produtoBean.remover(produto.id)}" value="remover"
+							onclick="return confirm('Deseja mesmo deletar o produto?')" />
 					</p:column>
 				</p:dataTable>
 				<br />
 				<br />
 
-				<h:commandButton class="btn btn-outline-primary"
-					value="Cadastrar novo produto" action="telaCad" />
-
+				<h:commandButton style="margin-bottom:100px;"
+					class="btn btn-outline-primary" value="Cadastrar novo produto"
+					action="telaCad" />
 			</h:form>
 
 		</center>
