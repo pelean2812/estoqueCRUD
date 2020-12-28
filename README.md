@@ -8,7 +8,7 @@
 
 - [X] A) A aplicação web foi construida utilizando JavaServer Faces (JSF)
 
-- [X] B) Os dados são armazenado no banco de dados PostgreSQL
+- [X] B) Os dados são armazenados no banco de dados PostgreSQL
 
 - [X] C) Foi utilizado Hibernate e Java Persistence API (JPA)
 
