@@ -26,7 +26,7 @@
 -Na linha 10 você verá isso: ```<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://ec2-52-44-139-108.compute-1.amazonaws.com:5432/deeg844erf52l8"/>```
  
  Altere o value disso "jdbc:postgresql://ec2-52-44-139-108.compute-1.amazonaws.com:5432/deeg844erf52l8" para isso "jdbc:postgresql://localhost:5432/nomeDoBancoQueVocêCriou",
- ou seja, você está dizendo que agora você não mais utilizar o banco de dados do HEROKU, mas sim, o que está em sua máquina.
+ ou seja, você está dizendo que agora você não vai mais utilizar o banco de dados do HEROKU, mas sim, o que está em sua máquina.
  
 -Na linha 11 você verá isso: ```<property name="javax.persistence.jdbc.user" value="vzauntcntwhdgq"/>```
  
